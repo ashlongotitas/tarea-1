@@ -1,1 +1,1 @@
-# tarea-1
+Sistema de Gestión de Tickets de Soporte Técnico
