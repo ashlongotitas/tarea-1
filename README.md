@@ -45,9 +45,8 @@ Una busqueda avanzada, permitir al usario filtrar tickets por prioridad u hora.
 Ejemplo de Uso:
 - Opción 1: Registrar un Ticket.
 Llega un nuevo cliente al soporte técnico.
-========================================
+
      Sistema de Gestion de Tickets
-========================================
 1) Registrar ticket
 
 Ingrese su opcion: 1
