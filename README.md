@@ -26,8 +26,8 @@ Luego necesitarás compilar el codigo:
 ![image](https://github.com/user-attachments/assets/f9d1c158-3622-4b3f-8d49-9d9c013b8ccc)
 
 
-  Debes ingresar el siguiente comando en la terminal: gcc *.c -o sistema_tickets
-Una vez compilado el código, podrás ejecutarlo con: ./sistema_tickets
+  Debes ingresar el siguiente comando en la terminal: gcc *.c -o gestion_pacientes, si este comando no funciona prueba: gcc programa.c -o programa.exe
+Una vez compilado el código, podrás ejecutarlo con: ./programa 
 
 Funcionalidades (funcionando correctamente):
 - Registrar Ticket con su ID y la descripción del problema.
@@ -43,45 +43,62 @@ Permitir al usuario editar la descripción de un ticket dedspúes de ser registr
 Una busqueda avanzada, permitir al usario filtrar tickets por prioridad u hora.
 
 Ejemplo de Uso:
+Sistema de Gestion de Tickets
+
+1) Registrar ticket
+2) Asignar prioridad a ticket
+3) Mostrar lista de tickets pendientes
+4) Procesar siguiente ticket
+5) Buscar ticket por ID
+6) Salir
+
 - Opción 1: Registrar un Ticket.
 Llega un nuevo cliente al soporte técnico.
 
-     Sistema de Gestion de Tickets
-  
-![image](https://github.com/user-attachments/assets/73eeddda-59c3-4586-8694-a8331122f6ee)
-
+Registrar nuevo ticket 
+Ingrese ID del ticket: 1234 
+Ingrese descripcion del problema: Sistema lento, lo necesito mañana para mi trabajo
+El ticket se ha registrado correctamente.
 
 El programa automáticamente registra el ticket con prioridad "Baja", la prioridad puede ser cambiada más adelante y si el usuario le asigna una nueva prioridad al ticket, la hora se actualizará a la hora donde la prioridad fue actualizada.
 
 - Opción 2: Asignar Prioridad
 El cliente necesita urgentemente su computadora arreglada para poder usarla en su trabajo.
 
-![image](https://github.com/user-attachments/assets/5382ce2a-04ce-4183-9c34-a1e7c6f166f8)
-
+Ingrese el ID del ticket al que desea asignar prioridad: 1234
+Ticket encontrado. Por favor ingrese la nueva prioridad (Alta, Media, Baja): Alta
+La prioridad del ticket ha sido actualizada correctamente.
 
 El programa actualiza la prioridad del ticket 1234 a "Alta", de esta forma se asegura que el cliente será uno de los próximos en ser atendido.
 
 - Opción 3: Mostrar lista
 El usuario podrá ver la lista de clientes que esperan ser atendindos, estos estarán ordenados por prioridad y por hora.
 
-![image](https://github.com/user-attachments/assets/c2397ef0-d278-4918-9b2d-66644078171d)
-
+Lista de tickets pendientes
+ID del Ticket: 1234, Descripcion: Sistema lento, lo necesito mañana para mi trabajo, Prioridad: Alta
 
 La lista mostrará primero al cliente con mayor prioridad y con la hora más antigua (en este caso solo a nuestro cliente con ID 1234)
 
 - Opción 4: Atender al siguiente cliente
 Se atiende al siguiente cliente basandose en su prioridad.
 
-![image](https://github.com/user-attachments/assets/ffe50efc-3756-485b-8bb9-9d8e00d78199)
-
+Datos del ticket procesado
+ID del Ticket: 1234
+Descripcion: Sistema lento, lo necesito mañana para mi trabajo.
+Prioridad: Alta.
+Hora de Registro: 22:35.
 
 Se mostrarán los datos del cliente que fue atendido y se eliminarán sus datos de la lista de pendientes.
 
 - Opción 5: Buscar ticket por ID
 El usuario podrá buscar cualquier ticket por su ID y ver sus detalles.
 
-![image](https://github.com/user-attachments/assets/a62cdccd-e9b8-4f23-bbfd-191bf1548f7c)
-
+Ingrese el ID del Ticket a buscar: 1234
+Ticket encontrado
+ID: 1234
+Descripcion: Sistema lento, lo necesito mañana para mi trabajo
+Prioridad: Alta
+Hora de registro: 22:35
 
 El programa nos mostrará todos los detalles del ID que busquemos, no lo eliminará de la lista, por lo que el usuario podrá revisar los detalles sin que el cliente sea atendido aún. 
 
