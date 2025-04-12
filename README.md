@@ -15,4 +15,5 @@ Comienza descargando y descomprimiendo el archivo (.zip)
 Abre la carpeta dentro de Visual Studio Code.
 Luego necesitarás compilar el codigo:
   Abre el archivo principal (en este caso main.c)
-  El la terminal debes ingresar el siguiente comando y luego ejecutarlo: gcc *.c -o main.c
+  Selecciona "terminal" arriba a la izquierda y luego "Nueva Terminal".
+  Debes ingresar el siguiente comando y luego ejecutarlo: gcc *.c -o main.c
