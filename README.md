@@ -26,7 +26,7 @@ Luego necesitarás compilar el codigo:
 ![image](https://github.com/user-attachments/assets/f9d1c158-3622-4b3f-8d49-9d9c013b8ccc)
 
 
-  Debes ingresar el siguiente comando en la terminal: gcc *.c -o gestion_pacientes, si este comando no funciona prueba: gcc programa.c -o programa.exe
+  Debes ingresar el siguiente comando en la terminal: gcc *.c -o programa.c, si este comando no funciona prueba: gcc programa.c -o programa.exe
 Una vez compilado el código, podrás ejecutarlo con: ./programa 
 
 Funcionalidades (funcionando correctamente):
