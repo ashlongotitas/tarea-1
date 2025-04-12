@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "list.h"
+#include "extra.c"
 
 char **leer_linea_csv(FILE *archivo, char separador);
 
