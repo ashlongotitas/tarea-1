@@ -14,7 +14,6 @@ typedef struct
   time_t horaRegistro;
 } datosTicket;
 
-// Menú principal
 void mostrarMenuPrincipal() 
 {
   limpiarPantalla();
@@ -137,7 +136,7 @@ void asignar_prioridad(List *listaTickets)
 
   if(!encontrado)
   {
-    puts("No se encontro el ticket con el ID ingresado.\n");
+    printf("No se encontro el ticket con el ID ingresado.\n");
     return;
   }
 
@@ -147,6 +146,7 @@ void asignar_prioridad(List *listaTickets)
   if(strcmp(nuevaPrioridad, "Alta") == 0 || strcmp(nuevaPrioridad, "Media") == 0 || strcmp(nuevaPrioridad, "Baja") == 0)
   {
     strcpy(ticketBuscado->prioridad, nuevaPrioridad);
+    time(&ticketBuscado->horaRegistro);
     printf("La prioridad del ticket ha sido actualizada correctamente.\n");
   }
   else
@@ -166,14 +166,75 @@ void mostrar_lista_tickets(List *listaTickets)
   datosTicket *ticket_actual = list_first(listaTickets);
   while(ticket_actual != NULL)
   {
-    printf("ID: %d, Descripcion: %s, Prioridad: %s\n", ticket_actual->id, ticket_actual->descripcion, ticket_actual->prioridad);
+    printf("ID del Ticket: %d, Descripcion: %s, Prioridad: %s\n", ticket_actual->id, ticket_actual->descripcion, ticket_actual->prioridad);
     ticket_actual = list_next(listaTickets);
   }
 }
 
+void procesar_siguiente_ticket(List *listaTickets)
+{
+  if(list_size(listaTickets) == 0)
+  {
+    printf("No hay tickets pendientes.\n");
+    return;
+  }
+  datosTicket *ticketProcesado = list_first(listaTickets);
+  char hora[10];
+  strftime(hora, sizeof(hora), "%H:%M", localtime(&ticketProcesado->horaRegistro));
+
+  printf("Datos del ticket procesado\n");
+  printf("ID del Ticket: %d\n", ticketProcesado->id);
+  printf("Descripcion: %s.\n", ticketProcesado->descripcion);
+  printf("Prioridad: %s.\n", ticketProcesado->prioridad);
+  printf("Hora de Registro: %s.\n", hora);
+
+  list_popFront(listaTickets);
+}
+
+void buscar_ticket(List *listaTickets)
+{
+  if(list_size(listaTickets) == 0)
+  {
+    printf("No hay tickets registrados :) \n");
+    return;
+  }
+
+  int ticketBuscado;
+  printf("Ingrese el ID del Ticket a buscar: ");
+  scanf("%d", &ticketBuscado);
+
+  datosTicket *ticket_actual = list_first(listaTickets);
+  bool encontrado = false;
+
+  while (ticket_actual != NULL)
+  {
+    if (ticket_actual->id == ticketBuscado)
+    {
+      encontrado = true;
+      break;
+    }
+    ticket_actual = list_next(listaTickets);
+  }
+
+  if (!encontrado)
+  {
+    printf("El ticket no se encuentra en la lista :( \n");
+    return;
+  }
+
+  char hora[10];
+  strftime(hora, sizeof(hora), "%H:%M", localtime(&ticket_actual->horaRegistro));
+  printf("Ticket encontrado\n");
+  printf("ID: %d\n", ticket_actual->id);
+  printf("Descripcion: %s\n", ticket_actual->descripcion);
+  printf("Prioridad: %s\n", ticket_actual->prioridad);
+  printf("Hora de registro: %s\n", hora);
+
+}
+
 int main() {
   char opcion;
-  List *listaTickets = list_create(); // puedes usar una lista para gestionar los pacientes
+  List *listaTickets = list_create(); 
 
   do {
     mostrarMenuPrincipal();
@@ -186,29 +247,27 @@ int main() {
       registrar_ticket(listaTickets);
       break;
     case '2':
-      // Lógica para asignar prioridad
       asignar_prioridad(listaTickets);
       break;
     case '3':
       mostrar_lista_tickets(listaTickets);
       break;
     case '4':
-      // Lógica para atender al siguiente paciente
+      procesar_siguiente_ticket(listaTickets);
       break;
     case '5':
-      // Lógica para mostrar pacientes por prioridad
+      buscar_ticket(listaTickets);
       break;
     case '6':
-      puts("Saliendo del sistema de gestión de tickets...");
+      puts("Saliendo del sistema de gestion de tickets...");
       break;
     default:
-      puts("Opción no válida. Por favor, intente de nuevo.");
+      puts("Opcion no valida. Por favor, intente de nuevo.");
     }
     presioneTeclaParaContinuar();
 
   } while (opcion != '6');
 
-  // Liberar recursos, si es necesario
   list_clean(listaTickets);
 
   return 0;
