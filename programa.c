@@ -1,4 +1,5 @@
 #include "list.h"
+#include "list.c"
 #include "extra.h"
 #include <stdio.h>
 #include <stdlib.h>
