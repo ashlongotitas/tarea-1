@@ -52,8 +52,8 @@ Sistema de Gestion de Tickets
 5) Buscar ticket por ID
 6) Salir
 
-- Opción 1: Registrar un Ticket.
-Llega un nuevo cliente al soporte técnico.
+Opción 1: Registrar un Ticket.
+- Llega un nuevo cliente al soporte técnico.
 
 Registrar nuevo ticket 
 
@@ -66,8 +66,8 @@ El ticket se ha registrado correctamente.
 
 El programa automáticamente registra el ticket con prioridad "Baja", la prioridad puede ser cambiada más adelante y si el usuario le asigna una nueva prioridad al ticket, la hora se actualizará a la hora donde la prioridad fue actualizada.
 
-- Opción 2: Asignar Prioridad
-El cliente necesita urgentemente su computadora arreglada para poder usarla en su trabajo.
+Opción 2: Asignar Prioridad
+- El cliente necesita urgentemente su computadora arreglada para poder usarla en su trabajo.
 
 Ingrese el ID del ticket al que desea asignar prioridad: 1234
 
@@ -77,8 +77,8 @@ La prioridad del ticket ha sido actualizada correctamente.
 
 El programa actualiza la prioridad del ticket 1234 a "Alta", de esta forma se asegura que el cliente será uno de los próximos en ser atendido.
 
-- Opción 3: Mostrar lista
-El usuario podrá ver la lista de clientes que esperan ser atendindos, estos estarán ordenados por prioridad y por hora.
+Opción 3: Mostrar lista
+- El usuario podrá ver la lista de clientes que esperan ser atendindos, estos estarán ordenados por prioridad y por hora.
 
 Lista de tickets pendientes
 
@@ -86,12 +86,12 @@ ID del Ticket: 1234, Descripcion: Sistema lento, lo necesito mañana para mi tra
 
 La lista mostrará primero al cliente con mayor prioridad y con la hora más antigua (en este caso solo a nuestro cliente con ID 1234)
 
-- Opción 4: Atender al siguiente cliente
-Se atiende al siguiente cliente basandose en su prioridad.
+Opción 4: Atender al siguiente cliente
+- Se atiende al siguiente cliente basandose en su prioridad.
 Se mostrarán los datos del cliente que fue atendido y se eliminarán sus datos de la lista de pendientes.
 
-- Opción 5: Buscar ticket por ID
-El usuario podrá buscar cualquier ticket por su ID y ver sus detalles.
+Opción 5: Buscar ticket por ID
+- El usuario podrá buscar cualquier ticket por su ID y ver sus detalles.
 
 Ingrese el ID del Ticket a buscar: 1234
 
