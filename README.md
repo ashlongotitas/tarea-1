@@ -27,7 +27,8 @@ Luego necesitarás compilar el codigo:
 
 
   Debes ingresar el siguiente comando en la terminal: gcc sistema_tickets.c -o sistema_tickets.exe
-Una vez compilado, podrás ejecutarlo con: ./sistema_tickets 
+  
+  Una vez compilado, podrás ejecutarlo con: ./sistema_tickets 
 
 Funcionalidades (funcionando correctamente):
 - Registrar Ticket con su ID y la descripción del problema.
