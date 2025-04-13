@@ -15,7 +15,7 @@ Comienza descargando y descomprimiendo el archivo (.zip)
 Abre la carpeta dentro de Visual Studio Code.
 
 Luego necesitarás compilar el codigo:
-  Abre el archivo principal (en este caso main.c)
+  Abre el archivo principal (en este caso sistema_tickets.c)
   Selecciona "terminal" arriba a la izquierda y luego "Nueva Terminal".
 
 ![image](https://github.com/user-attachments/assets/104b004a-12aa-476a-93d4-466b57edaa20)
