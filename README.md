@@ -83,7 +83,7 @@ Opción 3: Mostrar lista
 
 Lista de tickets pendientes
 
-ID del Ticket: 1234, Descripcion: Sistema lento, lo necesito mañana para mi trabajo, Prioridad: Alta
+ID del Ticket: 1234 Descripcion: Sistema lento, lo necesito mañana para mi trabajo, Prioridad: Alta
 
 La lista mostrará primero al cliente con mayor prioridad y con la hora más antigua (en este caso solo a nuestro cliente con ID 1234)
 
