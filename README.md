@@ -21,7 +21,7 @@ Luego necesitarás compilar el codigo:
 ![image](https://github.com/user-attachments/assets/104b004a-12aa-476a-93d4-466b57edaa20)
 
 
-  Una vez en terminal seleccione al lado del "+" y luego Git Bash.
+  Una vez en terminal seleccione al lado del "+" y luego Git Bash (IMPORTANTE).
 
 ![image](https://github.com/user-attachments/assets/f9d1c158-3622-4b3f-8d49-9d9c013b8ccc)
 
@@ -29,6 +29,13 @@ Luego necesitarás compilar el codigo:
   Debes ingresar el siguiente comando en la terminal: gcc sistema_tickets.c -o sistema_tickets.exe
   
   Una vez compilado, podrás ejecutarlo con: ./sistema_tickets 
+
+  ![image](https://github.com/user-attachments/assets/9c777c9e-50d9-4905-b8b4-5dd9f67fe095)
+
+  Y ya podrás utilizar el programa:
+
+  ![image](https://github.com/user-attachments/assets/9b45e0b7-f127-4811-8d84-33790968f183)
+
 
 Funcionalidades (funcionando correctamente):
 - Registrar Ticket con su ID y la descripción del problema.
