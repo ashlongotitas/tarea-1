@@ -83,12 +83,12 @@ void list_pushBack(List *L, void *data) {
 
 void *list_popFront(List *L) {
   if (L == NULL || L->head == NULL) {
-    return NULL; // Lista vacía o no inicializada
+    return NULL;
   }
   Node *temp = L->head;
   L->head = L->head->next;
   if (L->head == NULL) {
-    L->tail = NULL; // La lista ahora está vacía
+    L->tail = NULL; 
   }
   void *data = temp->data;
   free(temp);
@@ -98,9 +98,9 @@ void *list_popFront(List *L) {
 
 void *list_popBack(List *L) {
   if (L == NULL || L->head == NULL) {
-    return NULL; // Lista vacía o no inicializada
+    return NULL; 
   }
-  if (L->head == L->tail) { // Solo un elemento en la lista
+  if (L->head == L->tail) { 
     return list_popFront(L);
   }
   Node *current = L->head;
@@ -122,7 +122,7 @@ int list_size(List *L){
 
 void list_clean(List *L) {
   if (L == NULL) {
-    return; // Lista no inicializada
+    return; 
   }
   Node *current = L->head;
   Node *next;
