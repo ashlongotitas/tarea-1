@@ -1,3 +1,10 @@
+/*
+ * Sistema de Gestión de Tickets
+ * 
+ * Este programa permite registrar, priorizar, mostrar y procesar tickets de soporte
+ * técnico o atención al cliente, organizándolos por prioridad y hora de registro.
+ */
+
 #include "list.h"
 #include "list.c"
 #include "extra.h"
@@ -9,12 +16,15 @@
 
 typedef struct 
 {
-  int id;
-  char descripcion[100];  
-  char prioridad[10]; // Alta, Media, Baja
-  time_t horaRegistro;
+  int id;                       // Identificador único del ticket
+  char descripcion[100];        // Descripción del problema
+  char prioridad[10];           // Alta, Media, Baja
+  time_t horaRegistro;          // Hora de registro del ticket
 } datosTicket;
 
+
+
+//Muestra el menú principal del sistema
 void mostrarMenuPrincipal() 
 {
   limpiarPantalla();
@@ -30,6 +40,8 @@ void mostrarMenuPrincipal()
   puts("6) Salir");
 }
 
+/*Convierte una prioridad que está en texto a un valor numérico para comparación,
+donde "Alta" es 3, "Media" es 2 y "Baja" es 1. */
 int prioridad_a_numero(const char *prioridad)
 {
   if (strcmp(prioridad, "Alta") == 0) return 3;
@@ -38,6 +50,13 @@ int prioridad_a_numero(const char *prioridad)
   return 0;
 }
 
+
+/*
+Inserta un ticket manteniendo el orden por:
+1. Prioridad (de mayor a menor)
+2. Hora de registro (los más antiguos primero)
+Si la lista está vacía, lo agrega directamente.
+*/
 void insertar_por_prioridad(List *listaTickets, datosTicket *nuevoTicket)
 {
   if (list_size(listaTickets) == 0)
@@ -55,6 +74,8 @@ void insertar_por_prioridad(List *listaTickets, datosTicket *nuevoTicket)
   while (ticket_actual != NULL)
   {
     int prioridad_actual = prioridad_a_numero(ticket_actual->prioridad);
+
+    // Verifica si el nuevo ticket tiene mayor prioridad o igual prioridad pero más antiguo
     if (!agregado && prioridad_nueva > prioridad_actual)
     {
       list_pushBack(listaTemporal, nuevoTicket);
@@ -86,6 +107,12 @@ void insertar_por_prioridad(List *listaTickets, datosTicket *nuevoTicket)
   }
 }
 
+/*
+Registra un nuevo ticket solicitando:
+- ID numérico
+- Descripción del problema
+Asigna automáticamente prioridad "Baja" y la hora actual
+*/
 void registrar_ticket(List *listaTickets) 
 {
   printf("Registrar nuevo ticket\n");
@@ -109,6 +136,13 @@ void registrar_ticket(List *listaTickets)
   printf("El ticket se ha registrado correctamente.\n");
 }
 
+
+/*
+Cambia la prioridad de un ticket existente:
+1. Solicita el ID del ticket a modificar
+2. Valida que la nueva prioridad sea "Alta", "Media" o "Baja"
+3. Actualiza la hora de modificación
+*/
 void asignar_prioridad(List *listaTickets)
 {
   if(list_size(listaTickets) == 0)
@@ -156,6 +190,12 @@ void asignar_prioridad(List *listaTickets)
   }
 }
 
+
+/*
+Muestra todos los tickets pendientes en formato:
+ID: | Descripción: | Prioridad:
+Los muestra en orden de prioridad y hora de registro
+*/
 void mostrar_lista_tickets(List *listaTickets) 
 {
   if(list_size(listaTickets) == 0)
@@ -167,11 +207,17 @@ void mostrar_lista_tickets(List *listaTickets)
   datosTicket *ticket_actual = list_first(listaTickets);
   while(ticket_actual != NULL)
   {
-    printf("ID del Ticket: %d, Descripcion: %s, Prioridad: %s\n", ticket_actual->id, ticket_actual->descripcion, ticket_actual->prioridad);
+    printf("ID del Ticket: %d | Descripcion: %s | Prioridad: %s\n", ticket_actual->id, ticket_actual->descripcion, ticket_actual->prioridad);
     ticket_actual = list_next(listaTickets);
   }
 }
 
+
+/*
+Atiende el ticket de mayor urgencia (primero en la lista):
+1. Muestra sus detalles (ID, descripción, prioridad, hora de registro)
+2. Lo elimina de la lista de pendientes
+*/
 void procesar_siguiente_ticket(List *listaTickets)
 {
   if(list_size(listaTickets) == 0)
@@ -192,6 +238,14 @@ void procesar_siguiente_ticket(List *listaTickets)
   list_popFront(listaTickets);
 }
 
+/*
+Busca un ticket por su ID y muestra:
+- ID
+- Descripción del problema
+- Prioridad 
+- Hora de registro 
+No elimina el ticket de la lista
+*/
 void buscar_ticket(List *listaTickets)
 {
   if(list_size(listaTickets) == 0)
@@ -207,6 +261,7 @@ void buscar_ticket(List *listaTickets)
   datosTicket *ticket_actual = list_first(listaTickets);
   bool encontrado = false;
 
+  //Compara el ID buscado con cada ticket: si coincide, marca como encontrado y termina búsqueda, pero sino avanza al siguiente ticket (list_next)
   while (ticket_actual != NULL)
   {
     if (ticket_actual->id == ticketBuscado)
