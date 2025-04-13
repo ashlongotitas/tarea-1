@@ -37,11 +37,11 @@ Funcionalidades (funcionando correctamente):
 - Procesar el siguiente ticket (siguiendo el orden de prioridad).
 
 Problemas Conocidos:
-El sistema no verifica si el ID registrado ya está dentro de la lista, esto puede causar que hayan IDs duplicados.
+-El sistema no verifica si el ID registrado ya está dentro de la lista, esto puede causar que hayan IDs duplicados.
 
 Funcionalidades a Mejorar:
-Permitir al usuario editar la descripción de un ticket dedspúes de ser registrado.
-Una busqueda avanzada, permitir al usario filtrar tickets por prioridad u hora.
+- Permitir al usuario editar la descripción de un ticket dedspúes de ser registrado.
+- Una busqueda avanzada, permitir al usario filtrar tickets por prioridad u hora.
 
 Ejemplo de Uso:
 Sistema de Gestion de Tickets
