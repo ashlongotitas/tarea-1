@@ -250,7 +250,7 @@ void buscar_ticket(List *listaTickets)
 {
   if(list_size(listaTickets) == 0)
   {
-    printf("No hay tickets registrados :) \n");
+    printf("No hay tickets registrados \n");
     return;
   }
 
@@ -274,7 +274,7 @@ void buscar_ticket(List *listaTickets)
 
   if (!encontrado)
   {
-    printf("El ticket no se encuentra en la lista :( \n");
+    printf("Error, el ticket no se encuentra en la lista. \n");
     return;
   }
 
