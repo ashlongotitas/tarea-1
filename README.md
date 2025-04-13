@@ -86,7 +86,7 @@ La prioridad del ticket ha sido actualizada correctamente.
 El programa actualiza la prioridad del ticket 1234 a "Alta", de esta forma se asegura que el cliente será uno de los próximos en ser atendido.
 
 Opción 3: Mostrar lista
-- El usuario podrá ver la lista de clientes que esperan ser atendindos, estos estarán ordenados por prioridad y por hora.
+- El usuario podrá ver la lista de clientes que esperan ser atendindos, estos estarán ordenados por prioridad (y si estos tienen la misma prioridad serán ordenados por su hora de registro).
 
 Lista de tickets pendientes
 
@@ -104,13 +104,10 @@ Opción 5: Buscar ticket por ID
 Ingrese el ID del Ticket a buscar: 1234
 
 Ticket encontrado
+- ID: 1234
+- Descripcion: Sistema lento, lo necesito mañana para mi trabajo
+- Prioridad: Alta
+- Hora de registro: 22:35
 
-ID: 1234
-
-Descripcion: Sistema lento, lo necesito mañana para mi trabajo
-
-Prioridad: Alta
-
-Hora de registro: 22:35
-
-El programa nos mostrará todos los detalles del ID que busquemos, no lo eliminará de la lista, por lo que el usuario podrá revisar los detalles sin que el cliente sea atendido aún. 
+El programa nos mostrará todos los detalles del ID que busquemos, no lo eliminará de la lista, por lo que el usuario podrá revisar los detalles sin necesidad de que el cliente sea atendido aún. 
+Por último la Opción 6 es para salir del programa, si desea volver a ingresar ejecute nuevamente ./sistema_tickets en la terminal.
