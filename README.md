@@ -26,8 +26,8 @@ Luego necesitarás compilar el codigo:
 ![image](https://github.com/user-attachments/assets/f9d1c158-3622-4b3f-8d49-9d9c013b8ccc)
 
 
-  Debes ingresar el siguiente comando en la terminal: gcc *.c -o programa.c, si este comando no funciona prueba: gcc programa.c -o programa.exe
-Una vez compilado el código, podrás ejecutarlo con: ./programa 
+  Debes ingresar el siguiente comando en la terminal: gcc sistema_tickets.c -o sistema_tickets.exe
+Una vez compilado, podrás ejecutarlo con: ./sistema_tickets 
 
 Funcionalidades (funcionando correctamente):
 - Registrar Ticket con su ID y la descripción del problema.
